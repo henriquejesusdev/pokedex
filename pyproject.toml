@@ -1,0 +1,30 @@
+[project]
+name = "pokedex"
+version = "0.1.0"
+description = "Um programa para gerenciar uma Pokédex com funcionalidades de adição, listagem, remoção, atualização e registro de capturas de Pokémon."
+authors = [
+    {name = "Henrique Jesus",email = "henrique.jesus128@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pytest (>=8.4.0,<9.0.0)",
+    "click (>=8.2.1,<9.0.0)",
+    "requests (>=2.32.4,<3.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "pokedex", from = "src"}]
+
+[tool.poetry.scripts]
+pokedex = "src.pokedex.pokedex:main"
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+pytest = "^8.4.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
